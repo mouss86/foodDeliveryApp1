@@ -1,6 +1,45 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import {View, Text, Flatlist,TouchableOpacity} from "react-native";
+import {createStackNavigator} from '@react-navigation/native-stack';
 
+
+const Stack = createStackNavigator();
+
+export default function App()
+
+
+  {
+    return(
+        <Stack.Navigator>
+            <Stack.Screen
+            name= "HomeScreen"
+            component={HomeScreen} />
+              <Stack.Screen
+            name= "DetailScreen"
+            component={DetailScreen} />
+        </Stack.Navigator>
+    );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 export default function App() {
   return (
     <View style={styles.container}>
@@ -18,3 +57,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+*/
