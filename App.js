@@ -1,26 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import React from "react";
-import {View, Text, Flatlist,TouchableOpacity} from "react-native";
-import {createStackNavigator} from '@react-navigation/native-stack';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 
-const Stack = createStackNavigator();
+import HomeScreen from './Screens/HomeScreen'
+import DetailScreen from './Screens/DetailScreen'
+/* function HomeScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </View>
+  );
+} */
 
-export default function App()
+const Stack = createNativeStackNavigator();
 
-
-  {
-    return(
-        <Stack.Navigator>
-            <Stack.Screen
+function App() {
+  return(
+    <NavigationContainer>
+      <Stack.Navigator>
+      <Stack.Screen
             name= "HomeScreen"
             component={HomeScreen} />
               <Stack.Screen
             name= "DetailScreen"
-            component={DetailScreen} />
+            component={DetailScreen} />            
         </Stack.Navigator>
-    );
+    </NavigationContainer>
+  );
 };
+
+export default App;
+
+
+
+    
+
 
 
 
@@ -40,6 +55,17 @@ export default function App()
 
 
 /*
+
+return(
+        <Stack.Navigator>
+            <Stack.Screen
+            name= "HomeScreen"
+            component={HomeScreen} />
+              <Stack.Screen
+            name= "DetailScreen"
+            component={DetailScreen} />
+        </Stack.Navigator>
+    );
 export default function App() {
   return (
     <View style={styles.container}>
