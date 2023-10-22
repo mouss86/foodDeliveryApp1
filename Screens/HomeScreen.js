@@ -1,16 +1,16 @@
 import React from "react";
-import {View, Text, FlatList,TouchableOpacity, StyleSheet} from "react-native";
+import {View, Text, FlatList,TouchableOpacity, StyleSheet, Image} from "react-native";
 
 
 
 
 const HomeScreen = ({navigation}) => {
     const categories = [
-        {id:'1', title: 'African Food'},
-        {id:'2', title: 'European Food'},
-        {id:'3', title: 'Asian Food'},
-        {id:'4', title: 'Latino American Food'},
-        {id:'5', title: 'Fast Food'},
+        {id:'1', title: 'African Food', url: 'https://s.locavor.fr/data/produits/8/177716/attieke-poisson-attieke-poisson-dorade-177716-1646953065-1.jpg'},
+        {id:'2', title: 'European Food', url: 'https://reactjs.org/logo-og.png'},
+        {id:'3', title: 'Asian Food', url: 'https://reactjs.org/logo-og.png'},
+        {id:'4', title: 'Latino American Food', url: 'https://reactjs.org/logo-og.png'},
+        {id:'5', title: 'Fast Food', url: 'https://reactjs.org/logo-og.png'},
     ];
 
         // fonction navigation to DetailScreen
@@ -21,7 +21,7 @@ const HomeScreen = ({navigation}) => {
 
         return(
             <View>
-                
+               
                 <FlatList
                 //numColumns={2}
                 data={categories}
@@ -29,6 +29,9 @@ const HomeScreen = ({navigation}) => {
                  renderItem={({item})=>
                     <TouchableOpacity onPress={() => navigateToDetail(item.title)}>
                       <Text>{item.title}</Text>
+                      <Image style={{width:150, height:150 }}
+        source={{uri: item.url}}/>
+  
                     </TouchableOpacity>}
                 />
                 
