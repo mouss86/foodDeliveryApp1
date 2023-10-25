@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import HomeScreen from './Screens/HomeScreen'
 import DetailScreen from './Screens/DetailScreen'
+import ThirdScreen from './Screens/ThirdScreen'
 /* function HomeScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -24,7 +25,10 @@ function App() {
             component={HomeScreen} />
               <Stack.Screen
             name= "DetailScreen"
-            component={DetailScreen} />            
+            component={DetailScreen} />
+            <Stack.Screen
+            name="ThirdScreen"
+            component= {ThirdScreen} />           
         </Stack.Navigator>
     </NavigationContainer>
   );
